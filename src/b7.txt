@@ -1,0 +1,14 @@
+//branch b7: interpolation concept
+
+function App(){
+  let str= `Hello World`;
+  let pi= 3.14;
+  let active= true;
+  return (
+    <>
+      <h1>Hello World</h1>    
+    </>
+  )
+}
+
+export default App;

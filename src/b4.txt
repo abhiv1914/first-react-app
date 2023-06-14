@@ -1,0 +1,17 @@
+
+Branch B4: JSX-syntax
+---------
+
+// JSX Syntax
+
+function App() {
+  let jsx1=<h1>Hello Universe</h1>;
+  let jsx2=(
+     <>
+	<h1>Hello Universe</h1>;
+     </>		
+);	  
+return jsx1;
+}
+
+export default App;
