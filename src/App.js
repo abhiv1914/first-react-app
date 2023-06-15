@@ -34,7 +34,7 @@ function ListDemo() {
 
       {/** C4: List */}
       {list.map((item) => (
-        <h1>Hello {item}</h1>
+        <h1>{item}</h1>
       ))}
     </>
   );
