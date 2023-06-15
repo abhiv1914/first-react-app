@@ -1,37 +1,31 @@
+import { useState } from "react";
+
 function App(){
   return(
     <>
-      <h1>Props Demo</h1>
+      <h1>Stateful List</h1>
       <ListDemo/>
     </>
   );
 }
 
 function ListDemo(){
-  let data="Hello World";
-  let list=["","","",""];
+  let [list,setList]=useState["delhi"];
+  let addItemAction =()=>{
+    let newList=[...list,"Mumbai"];
+    console.log(newList);
 
-  let list1=[];
+    //DOM :: trigger Donm
+    setList(newList);
+  };
 
-  for(let i = 0; i<100;i++){}
-  list1.push("");
-
+  
   return ( 
   <>
-    <h1>{data} </h1>  
-
-    {/* version 3 */}
+    <input type="button" value="Add New Item" onClick={addItemAction}/>
     {list.map((item)=>(
-      <div>
-        Hello Universe 
-      </div>
+      <h1>Hello {item}</h1>
     ))}  
-    <hr />
-    {list.map((item) => (
-      <div>
-        <h1>Hello World</h1>
-      </div>
-    ))}      
   </>
   );
 }
