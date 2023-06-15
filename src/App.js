@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Counter App</h1>
+      <CounterApp />
+      <CounterApp />
+      <CounterApp />
+      <CounterApp />
+    </>
+  );
+}
+
+function CounterApp() {
+  // let counter = 100; // stateless
+  let [counter, setCounter] = useState(100); // stateful + DOM Opr
+
+  let likeMeAction = () => {
+    counter = counter + 1;
+    console.log(counter);
+
+    // Asking react to perform dom opr
+    // how to trigger the DOM Opr
+    setCounter(counter);
+  };
+
+  return (
+    <>
+      <h5>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+        commodi reiciendis ullam aliquam facilis perferendis accusamus
+        voluptatum eligendi, eaque voluptatem corrupti, dicta nesciunt voluptas.
+        Cumque quod dolorem cupiditate quidem corrupti!
+      </h5>
+      <h5>
+        {counter}{" "}
+        <input type="button" value="&#128077;" onClick={likeMeAction} />
+      </h5>
+    </>
   );
 }
 
