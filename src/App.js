@@ -16,19 +16,20 @@ function ListDemo() {
 
   // C2: Acton Member Funcn
   let addItemAction = () => {
-    // why didn u use push method, push method update the same object
-    // setter method requires immutable object.
-    // We have to pass new list.
-    let newList = [...list, "mumbai"];
-    console.log(newList);
+    let inputRef =document.querySelector("#id1");
+    let inputValue = inputRef.value;
 
-    // DOM :: TRIGGER DOM
+    let newList = [...list, inputValue];
+
     setList(newList);
+
+    inputRef.value="";
   };
 
   return (
     <>
       {/** C3: Event Binding */}
+      <input type="text" id="id1" placeholder="Enter user input" />
       <input type="button" value="Add New Item" onClick={addItemAction} />
 
       {/** C4: List */}
