@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   return (
@@ -10,29 +10,30 @@ function App() {
 }
 
 function ListDemo() {
-  // let list = ["delhi"]
-  // C1: Stateful Variable
+  let inputRef = useRef();
   let [list, setList] = useState(["delhi"]);
 
-  // C2: Acton Member Funcn
   let addItemAction = () => {
-    let inputRef =document.querySelector("#id1");
-    let inputValue = inputRef.value;
+    // console.log(inputRef.current);
+    // console.log(document.querySelector("#id1"));
 
-    let newList = [...list, inputValue];
-
+    let inputValue = inputRef.current.value;
+    let newList = [inputValue, ...list];
     setList(newList);
 
-    inputRef.value="";
+    inputRef.current.value = "";
   };
 
   return (
     <>
-      {/** C3: Event Binding */}
-      <input type="text" id="id1" placeholder="Enter user input" />
+      <input
+        type="text"
+        id="id1"
+        ref={inputRef}
+        placeholder="Enter user input..."
+      />
       <input type="button" value="Add New Item" onClick={addItemAction} />
 
-      {/** C4: List */}
       {list.map((item) => (
         <h1>{item}</h1>
       ))}
