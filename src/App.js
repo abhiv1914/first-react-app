@@ -9,21 +9,21 @@ function App(){
 
 function ListDemo(){
   let data="Hello World";
-  let list=[];
-  
-  for(let i=0;i<10;i++){
-    list.push("hello Universe");
-  }  
-  console.log(list);
+  let list=["delhi","calcutta","chennai"];
+
   return <>
     <h1>{data} </h1>  
 
-    {/* forEach is consumer function */}
-    {list.forEach((item)=>item)}
+    {/* version 3 */}
+    {list.map((item)=>(
+      <h1>Hello World</h1> 
+    ))}  
 
-    {/* map is input/output */}
-    {/* output because of this */}
-    {list.map((item)=>item)}  
+    {/* version 2 */}
+    {list.map((item)=>" Hello "+item)}  
+
+    {/* version 1 */}
+    {list.map((item)=>" "+item)}  
   </>;
 }
 
